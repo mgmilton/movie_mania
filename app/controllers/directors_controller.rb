@@ -4,6 +4,10 @@ class DirectorsController < ApplicationController
     @director = Director.new
   end
 
+  def show
+    @director = Director.find(params[:id])
+  end
+
   def create
     @director = Director.new(director_params)
     if @director.save
@@ -11,10 +15,6 @@ class DirectorsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @director = Director.find(params[:id])
   end
 
   private
