@@ -23,11 +23,10 @@ end
 describe "As a user" do
   describe "When I visit a new route" do
     it "I can see a form with fields for title and description" do
+      director_1 = Director.create!(id: 1, name: "Charlie")
+      visit new_director_movie_path(director_1)
 
-      visit new_movie_path  
-
-      expect(page).to have_content("Enter a new movie")
-      click_button('Submit')
+      expect(page).to have_content("Create a New Movie")
     end
   end
 end
