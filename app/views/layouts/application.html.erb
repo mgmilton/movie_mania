@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to "Home", movies_path %>
+      <%= link_to "Movies", movies_path %>
+      <%= link_to "Directors", directors_path%>
+    </nav>
     <%= yield %>
   </body>
 </html>

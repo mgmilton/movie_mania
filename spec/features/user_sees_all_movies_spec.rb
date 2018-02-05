@@ -24,7 +24,7 @@ describe "As a user" do
   describe "When I visit a new route" do
     it "I can see a form with fields for title and description" do
 
-      visit new_movie_path
+      visit new_movie_path  
 
       expect(page).to have_content("Enter a new movie")
       click_button('Submit')
@@ -44,7 +44,7 @@ describe "As a user" do
       empire = Movie.create!(title: "Empire Records", description: "Independent Delaware store that employs a tight-knit group of music-savvy youths.", director_id: 1)
 
       visit movie_path(empire)
-      
+
 
       expect(page).to have_content("Empire Records")
     end
