@@ -9,7 +9,7 @@ describe "user sees all movies" do
 
       empire = Movie.create!(title: "Empire Records", description: "Independent Delaware store that employs a tight-knit group of music-savvy youths.", director_id: 1)
 
-      visit "/movies"
+      visit movies_path
 
       expect(page).to have_content("All Movies")
       expect(page).to have_content(fred.title)
@@ -24,7 +24,7 @@ describe "As a user" do
   describe "When I visit a new route" do
     it "I can see a form with fields for title and description" do
 
-      visit "/movies/new"
+      visit new_movie_path
 
       expect(page).to have_content("Enter a new movie")
       click_button('Submit')
@@ -43,7 +43,8 @@ describe "As a user" do
 
       empire = Movie.create!(title: "Empire Records", description: "Independent Delaware store that employs a tight-knit group of music-savvy youths.", director_id: 1)
 
-      visit '/movies/?title=EmpireRecords'
+      visit movie_path(empire)
+      
 
       expect(page).to have_content("Empire Records")
     end
@@ -54,7 +55,7 @@ describe "As a user" do
 
 
 
-      visit "/movies?title=EmpireRecords"
+      visit movie_path(empire)
 
       expect(page).to have_content("Delaware store")
     end
