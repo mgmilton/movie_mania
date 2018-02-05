@@ -6,8 +6,8 @@ describe "as a user" do
       visit "/directors/new"
 
       fill_in "diector[name]", with: "Copola"
-      click_on "Submit"
-      
+      click_on "Create Director"
+
       expect(page).to have_content("Director: Copola")
     end
   end
