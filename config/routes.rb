@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  ##httpverb path, to specific controller#action'
   root "movies#index"
 
-  resources :movies
-  resources :directors
+  resources :directors, shallow: true do
+    resources :movies
+  end
+
+  resources :movies, only: [:index]
 end

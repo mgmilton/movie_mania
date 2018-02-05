@@ -2,21 +2,22 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :destroy, :edit, :update]
 
   def index
-    @movies = Movie.all
+    @director = Director.find(params[:director_id])
   end
 
   def new
+    @director = Director.find(params[:director_id])
     @movie = Movie.new
   end
 
   def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
-      flash[:success] = "You created #{@movie.title}"
-      redirect_to movie_path(@movie)
-    else
-      render :new
-    end
+    @director = Director.find(params[:director_id])
+    @movie = @director.movies.new(movie_params)
+      if @movie.save
+          redirect_to director_movies_path(@director)
+      else
+        render :new
+      end
   end
 
   def show
@@ -47,7 +48,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :body)
+    params.require(:movie).permit(:title, :description)
   end
 
   def set_movie
