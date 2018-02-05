@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :destroy, :edit, :update]
 
   def index
-    @movies = Movie.all
+    @director = Director.find(params[:director_id])
   end
 
   def new

@@ -1,12 +1,10 @@
 <html>
 
-  <h1> All Movies </h1>
+  <h1> All Movies for <%= @director.name %> </h1>
 
-  <% @movies.each do |movie| %>
+  <% @director.movies.each do |movie| %>
     <h2><%= link_to movie.title, movie_path(movie)%></h2>
     <p>Description: <%= movie.description %></p>
-    <p>Director: <%= movie.director.name %> </p>
-
   <% end %>
 
 

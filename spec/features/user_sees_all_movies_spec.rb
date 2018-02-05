@@ -9,7 +9,7 @@ describe "user sees all movies" do
 
       empire = Movie.create!(title: "Empire Records", description: "Independent Delaware store that employs a tight-knit group of music-savvy youths.", director_id: 1)
 
-      visit movies_path
+      visit director_movies_path(director_1)
 
       expect(page).to have_content("All Movies")
       expect(page).to have_content(fred.title)
