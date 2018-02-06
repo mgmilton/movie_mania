@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'database_cleaner'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_bot_rails', '~>4.0'
 end
 
 group :development do

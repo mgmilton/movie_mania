@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "User creates a new movie" do
   it "fills in revelant information" do
-    director = Director.create(name: "Ilana")
+    director = create(:director)
 
     visit new_director_movie_path(director)
 
@@ -12,6 +12,6 @@ describe "User creates a new movie" do
 
     expect(page).to have_content("Finding Nemo")
     expect(page).to have_content("A sad fish story")
-    expect(page).to have_content("Ilana")
+    expect(page).to have_content("Name 1")
   end
 end
