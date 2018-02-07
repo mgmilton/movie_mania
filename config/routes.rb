@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "movies#index"
+  root "directors#index"
 
   resources :directors, shallow: true do
     resources :movies
