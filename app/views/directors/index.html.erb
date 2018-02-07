@@ -1,7 +1,9 @@
+<div class="director-index">
 <h1> All Directors: </h1>
 <% @directors.each do |director| %>
-  <%= director.name %>
+  <%= link_to director.name, director_movies_path(director), class: "link"%> </br>
     <% director.movies.each do |movie| %>
-      <%= link_to movie.title, movie_path(movie) %>
-      <% end %>
+      <%= link_to movie.title, movie_path(movie), class: "link" %>
+      <% end %></br></br>
 <% end %>
+</div>
