@@ -8,7 +8,7 @@ describe "user sees all movies" do
 
   describe "they visit movie index" do
     it "sees all the movies" do
-      require 'pry'; binding.pry
+      
       visit director_movies_path(@director_1)
 
       expect(page).to have_content("All Movies")
