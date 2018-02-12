@@ -17,6 +17,7 @@ describe "As a visitor" do
       click_on "Log In"
 
       expect(page).to have_content("Welcome, #{user.name}")
+      expect(page).to have_content("Logout")
     end
   end
 end
