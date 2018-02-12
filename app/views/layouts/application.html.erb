@@ -6,13 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    
+
   </head>
 
   <body>
     <nav>
       <%= link_to "Home", movies_path %>
-      <%= link_to "Movies", movies_path %>
       <%= link_to "Directors", directors_path%>
     </nav>
     <%= yield %>
