@@ -1,8 +1,8 @@
 require "rails_helper"
 
-describe "As a visitor" do
-  describe "when I visit the root" do
-    it "he or she can login" do
+describe "As a user" do
+  describe "when I login in" do
+    it "he or she can log out" do
       user = User.create(username: "funbucket13", password: "test")
 
       visit '/'
