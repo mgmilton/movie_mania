@@ -7,17 +7,18 @@ describe "As a visitor" do
 
       visit '/'
 
-      click_on "Log In"
+      click_on "I already have an account"
 
       expect(current_path).to eq(login_path)
 
-      fill_in "email", with: user.email
+      fill_in "username", with: user.username
       fill_in "password", with: user.password
 
       click_on "Log In"
 
-      expect(page).to have_content("Welcome, #{user.name}")
-      expect(page).to have_content("Logout")
+      expect(current_path).to eq(user_path(user))
+      expect(page).to have_content("Welcome, #{user.username}")
+      expect(page).to have_content("Log Out")
     end
   end
 end
