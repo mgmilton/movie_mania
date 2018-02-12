@@ -15,10 +15,12 @@ describe "As a visitor" do
       fill_in "password", with: user.password
 
       click_on "Log In"
-      
+
       click_on "Log Out"
 
       expect(current_path).to eq(root_path)
+      expect(page).to have_content("Sign Up")
+      expect(page).to have_content("I already have an account")
     end
   end
 end
