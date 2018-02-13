@@ -31,8 +31,8 @@ describe User, type: :model do
 
     it "can be created as a default user" do
       user = User.create(username: "sammy",
-                         password: "pass",
-                         role: 0)
+                         password: "pass")
+                         
       expect(user.role).to eq("default")
       expect(user.default?).to be_truthy
     end
