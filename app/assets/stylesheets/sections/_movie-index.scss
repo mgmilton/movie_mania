@@ -1,3 +1,11 @@
+$box: $light-purple 3px dotted;
+
+
+@mixin movie-index-border {
+  border: $box;
+  background-color: $grayish;
+}
+
 .movie-index {
   .link{
     color: $dark-navy;
@@ -8,14 +16,14 @@
   }
 
   h2 {
-    border: $box;
+    @include movie-index-border;
     text: {
       align: center;
     }
   }
 
   p {
-    color: $light-purple;
-    border: $box;
+    color: $dark-navy;
+    @extend h2;
   }
 }
