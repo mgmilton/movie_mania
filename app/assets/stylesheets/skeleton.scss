@@ -1,0 +1,29 @@
+
+h1 {
+  font: {
+    family: $font-default;
+    size: 50px;
+    }
+}
+
+p {
+  text: {
+    align: center;
+  }
+  font: {
+    family: "Papyrus", sans-serif;
+    size: 15px;
+    }
+}
+
+
+
+.director-index {
+  .link {
+    color: $dark-navy;
+  }
+}
+
+h1{
+  color: $light-purple;
+}

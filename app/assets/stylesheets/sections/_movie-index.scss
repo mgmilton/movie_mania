@@ -1,0 +1,34 @@
+$box: $light-purple 3px dotted;
+$default-box: $ice-blue 3px dotted;
+
+@mixin movie-index-border($box: $default-box) {
+  border: $box;
+  background-color: $grayish;
+}
+
+
+@mixin movie-border-circle($radius: 100%) {
+  border: $box;
+  border-radius: $radius;
+}
+.movie-index {
+  .link{
+    color: $dark-navy;
+  }
+
+  h1 {
+  color: $light-brown;
+  }
+
+  h2 {
+    @include movie-index-border();
+    text: {
+      align: center;
+    }
+  }
+
+  p {
+    color: $dark-navy;
+    @include movie-border-circle();
+  }
+}
