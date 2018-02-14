@@ -1,11 +1,16 @@
 $box: $light-purple 3px dotted;
+$default-box: $ice-blue 3px dotted;
 
-
-@mixin movie-index-border {
+@mixin movie-index-border($box: $default-box) {
   border: $box;
   background-color: $grayish;
 }
 
+
+@mixin movie-border-circle($radius) {
+  border: $box;
+  border-radius: $radius;
+}
 .movie-index {
   .link{
     color: $dark-navy;
@@ -16,7 +21,7 @@ $box: $light-purple 3px dotted;
   }
 
   h2 {
-    @include movie-index-border;
+    @include movie-index-border();
     text: {
       align: center;
     }
@@ -24,6 +29,6 @@ $box: $light-purple 3px dotted;
 
   p {
     color: $dark-navy;
-    @extend h2;
+    @include movie-border-circle(100%);
   }
 }
