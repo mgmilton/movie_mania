@@ -1,10 +1,3 @@
-$light-purple: #6369D1;
-$ice-blue: #60E1E0;
-$grayish: #D8D2E1;
-$light-brown: #B88E8D;
-$dark-navy: #34435E;
-$light-purple: #C14ED3;
-$box: $grayish 3px dotted;
 
 .movie-index {
   .link{
@@ -12,6 +5,10 @@ $box: $grayish 3px dotted;
   }
 
   h1 {
+    font: {
+      family: $font-default;
+      size: 50px;
+    }
   color: $light-brown;
   }
 
