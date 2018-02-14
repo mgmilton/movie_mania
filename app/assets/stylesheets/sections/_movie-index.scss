@@ -1,0 +1,21 @@
+.movie-index {
+  .link{
+    color: $dark-navy;
+  }
+
+  h1 {
+  color: $light-brown;
+  }
+
+  h2 {
+    border: $box;
+    text: {
+      align: center;
+    }
+  }
+
+  p {
+    color: $light-purple;
+    border: $box;
+  }
+}

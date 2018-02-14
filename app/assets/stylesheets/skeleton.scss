@@ -1,39 +1,22 @@
 
-.movie-index {
-  .link{
-    color: $dark-navy;
-  }
-
-  h1 {
-    font: {
-      family: $font-default;
-      size: 50px;
+h1 {
+  font: {
+    family: $font-default;
+    size: 50px;
     }
-  color: $light-brown;
-  }
-
-  h2 {
-    text: {
-      align: center;
-      decoration: underline;
-    }
-    font: {
-      family: "Papyrus";
-      size: 25px;
-    }
-    border: $box;
-  }
-
-  p {
-    color: $light-purple;
-    border: $box;
-
-    font: {
-      family: "Papyrus", sans-serif;
-      size: 15px;
-    }
-  }
 }
+
+p {
+  text: {
+    align: center;
+    decoration: underline;
+  }
+  font: {
+    family: "Papyrus", sans-serif;
+    size: 15px;
+    }
+}
+
 
 
 .director-index {
