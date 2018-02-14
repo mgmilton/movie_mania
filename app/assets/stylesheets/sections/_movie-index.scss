@@ -7,7 +7,7 @@ $default-box: $ice-blue 3px dotted;
 }
 
 
-@mixin movie-border-circle($radius) {
+@mixin movie-border-circle($radius: 100%) {
   border: $box;
   border-radius: $radius;
 }
@@ -29,6 +29,6 @@ $default-box: $ice-blue 3px dotted;
 
   p {
     color: $dark-navy;
-    @include movie-border-circle(100%);
+    @include movie-border-circle();
   }
 }
