@@ -1,12 +1,11 @@
 <html>
-<div class= "movie-index">
-  <h1> All Movies for <%= @director.name %> </h1>
+  <div class= "movie-index">
+    <h1> All Movies for <%= @director.name %> </h1>
 
-  <% @director.movies.each do |movie| %>
-    <h2><%= link_to movie.title, movie_path(movie), class: "link"%></h2>
-    <p>Description: <%= movie.description %></p>
-
-  <% end %>
-
-</div>
+    <% @director.movies.each do |movie| %>
+      <h2><%= link_to movie.title, movie_path(movie), class: "link"%></h2>
+      <p>Description: <%= movie.description %></p></br>
+      <%= button_to "Add Movie", carts_path(director_id: @director.id, movie_id: movie), class: "btn btn-danger" %>
+    <% end %>
+  </div>
 </html>

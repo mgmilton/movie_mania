@@ -12,6 +12,6 @@ describe "User creates a new movie" do
 
     expect(page).to have_content("Finding Nemo")
     expect(page).to have_content("A sad fish story")
-    expect(page).to have_content("Name 1")
+    expect(page).to have_content(director.name)
   end
 end
