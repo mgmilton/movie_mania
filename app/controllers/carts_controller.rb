@@ -3,9 +3,9 @@ class CartsController < ApplicationController
 
   def create
     movie = Movie.find(params[:movie_id])
-    session[:cart] ||= Hash.new(0)
-    session[:cart][movie.id.to_s] = session[:cart][movie.id.to_s] + 1
-    flash[:notice] = "You now have #{pluralize(session[:cart][movie.id.to_s], movie.title)} in your cart."
+    @cart.add_movie(movie.id)
+    session[:cart] = @cart.contents
+    flash[:notice] = "You now have #{pluralize(@cart.count_of(movie.id), movie.title)} in your cart."
     redirect_to director_movies_path(params[:director_id])
   end
 end

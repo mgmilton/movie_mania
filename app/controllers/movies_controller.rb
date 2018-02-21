@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
 
   def index
     @director = Director.find(params[:director_id])
-    @cart = Cart.new(session[:cart])
   end
 
   def new
