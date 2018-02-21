@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :destroy, :edit, :update]
+  before_action :set_movie, only: [:destroy, :edit, :update]
 
   def index
     @director = Director.find(params[:director_id])
@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-
+    @movie = Movie.find_by(slug: params[:slug])
   end
 
   def edit

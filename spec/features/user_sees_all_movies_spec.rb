@@ -8,7 +8,7 @@ describe "user sees all movies" do
 
   describe "they visit movie index" do
     it "sees all the movies" do
-      
+
       visit director_movies_path(@director_1)
 
       expect(page).to have_content("All Movies")
@@ -44,12 +44,12 @@ describe "As a user" do
 
   describe "When I visit a show route" do
     it "I see the title of a movie"  do
-      visit movie_path(@movies[0])
+      visit movie_path(@movies[0].slug)
       expect(page).to have_content(@movies[0].title)
     end
 
     it "I can see the description of the movie" do
-      visit movie_path(@movies[0])
+      visit movie_path(@movies[0].slug)
 
       expect(page).to have_content(@movies[0].description)
     end

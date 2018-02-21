@@ -4,7 +4,7 @@ FactoryBot.define do
   end
 
   factory :movie do
-    sequence(:title) {|n| "Name #{n}"}
+    sequence(:title) {|n| "Title #{n}"}
     sequence(:description) {|n| "Description #{n}"}
     director
   end
