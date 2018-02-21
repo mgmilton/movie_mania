@@ -29,7 +29,7 @@ describe Cart, type: :model do
   end
 
   describe "#count_of" do
-    it "reports how many of a particular movie" do
+    it "returns a count of a particular movie" do
       expect(@cart.count_of(1)).to eq(2)
       expect(@cart.count_of(2)).to eq(3)
     end
