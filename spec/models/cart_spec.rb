@@ -18,6 +18,14 @@ describe Cart, type: :model do
 
       expect(@cart.contents).to eq({"1" => 3, "2" => 4})
     end
+
+    it "handels default nil" do
+      cart = Cart.new(nil)
+      expect(cart.contents).to eq({})
+
+      cart.add_movie("1")
+      expect(cart.contents).to eq("1" => 1)
+    end
   end
 
   describe "#count_of" do
