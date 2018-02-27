@@ -26,7 +26,6 @@ describe "as a user" do
         expect(page).to have_content("You now have 1 #{@movie.title} in your cart.")
 
         click_button "Add Movie"
-
         eq(director_movies_path(@movie.director))
         expect(page).to have_content("You now have 2 #{@movie.title}s in your cart.")
       end

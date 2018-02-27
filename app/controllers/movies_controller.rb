@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
   def new
     @director = Director.find(params[:director_id])
+    @award = Award.find(params[:movie_id])
     @movie = Movie.new
   end
 
@@ -48,7 +49,7 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :description)
+    params.require(:movie).permit(:title, :description, :director_id)
   end
 
   def set_movie

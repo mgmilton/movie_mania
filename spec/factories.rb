@@ -12,4 +12,10 @@ FactoryBot.define do
   factory :admin, class: Director do
     name "Ilana"
   end
+
+  factory :awards do
+   sequence(:title) {|n| "Title #{n}" }
+   sequence(:year) {|n| "Year #{n}"}
+   movie
+  end
 end

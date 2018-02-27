@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221182645) do
+ActiveRecord::Schema.define(version: 20180227165832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,29 @@ ActiveRecord::Schema.define(version: 20180221182645) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "awards", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.bigint "movies_id"
+    t.bigint "director_id"
+    t.index ["director_id"], name: "index_awards_on_director_id"
+    t.index ["movies_id"], name: "index_awards_on_movies_id"
+  end
+
+  create_table "awards_movies", force: :cascade do |t|
+    t.bigint "movies_id"
+    t.bigint "awards_id"
+    t.index ["awards_id"], name: "index_awards_movies_on_awards_id"
+    t.index ["movies_id"], name: "index_awards_movies_on_movies_id"
+  end
+
+  create_table "director_awards", force: :cascade do |t|
+    t.bigint "awards_id"
+    t.bigint "director_id"
+    t.index ["awards_id"], name: "index_director_awards_on_awards_id"
+    t.index ["director_id"], name: "index_director_awards_on_director_id"
   end
 
   create_table "directors", force: :cascade do |t|
@@ -46,5 +69,11 @@ ActiveRecord::Schema.define(version: 20180221182645) do
 
   add_foreign_key "actor_movies", "actors"
   add_foreign_key "actor_movies", "movies"
+  add_foreign_key "awards", "directors"
+  add_foreign_key "awards", "movies", column: "movies_id"
+  add_foreign_key "awards_movies", "awards", column: "awards_id"
+  add_foreign_key "awards_movies", "movies", column: "movies_id"
+  add_foreign_key "director_awards", "awards", column: "awards_id"
+  add_foreign_key "director_awards", "directors"
   add_foreign_key "movies", "directors"
 end
