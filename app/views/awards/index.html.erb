@@ -1,4 +1,6 @@
 <% @awards.each do |award| %>
-   <%= link_to "#{award.title}", award.title%> </br>
-   <%= award.year %> </br>
+    <%= link_to award.title, awards_path(award)%> </br>
+    <%= award.year %> </br>
   <% end %>
+
+<%= render partial: "form" %>

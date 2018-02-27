@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
   def new
     @director = Director.find(params[:director_id])
-    @award = Award.find(params[:movie_id])
+    # @awards = Awards.find(params[:award_id])
     @movie = Movie.new
   end
 

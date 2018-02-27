@@ -5,11 +5,11 @@ class AwardsController < ApplicationController
   end
 
   def new
-    @awards = Awards.find(awards_params[:awards_id])
+    @awards = Awards.new
   end
 
   def create
-    @awards = Awards.find(awards_params[:awards_id])
+    @awards = Awards.new(params[:id])
     if @awards.save
       redirect_to awards_path(@awards)
     else
@@ -18,13 +18,7 @@ class AwardsController < ApplicationController
   end
 
   def show
-    @awards = Awards.find(params[:id])
+    @award = Awards.find(params[:id])
   end
-
-
- private
-    def awards_params
-      params.require(:awards).permit(:title, :year)
-    end
 
 end
